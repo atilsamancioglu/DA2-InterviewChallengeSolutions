@@ -11,10 +11,10 @@ class Solution:
         bt = [amount + 1] * (amount + 1)
         bt[0] = 0
         
-        for amount in range(1, amount + 1):
+        for a in range(1, amount + 1):
             for coin in coins:
-                if amount - coin >= 0:
-                    bt[amount] = min(bt[amount],1+bt[amount-coin])
+                if a - coin >= 0:
+                    bt[a] = min(bt[a],1+bt[a-coin])
         
         if bt[amount] == amount + 1:
             return -1
