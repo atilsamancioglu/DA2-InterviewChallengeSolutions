@@ -18,5 +18,5 @@ class Solution:
             
         nums = sorted(nums,key=cmp_to_key(customComparison))
         
-        #return "".join(nums) -> commented out because it didn't work with [0,0]
+        #return "".join(nums) -> commented out because it didn't work with [0,0] ..
         return str(int("".join(nums)))
