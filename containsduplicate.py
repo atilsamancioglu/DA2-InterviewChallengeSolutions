@@ -5,6 +5,8 @@ Given an integer array nums, return true if any value appears at least twice in 
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(nums) != len(set(nums))
+        '''
         hashSet = set()
         
         for num in nums:
@@ -12,3 +14,4 @@ class Solution:
                 return True
             hashSet.add(num)
         return False
+        '''
