@@ -9,7 +9,11 @@ Return an edge that can be removed so that the resulting graph is a tree of n no
 
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        parents = [i for i in range(len(edges) + 1)]
+        parents = []
+        
+        for i in range(len(edges) + 1):
+            parents.append(i)
+
         ranks = [1] * (len(edges) + 1)
         
         def find(n):
