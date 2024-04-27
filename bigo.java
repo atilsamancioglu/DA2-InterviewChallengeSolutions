@@ -65,4 +65,37 @@ class Solution {
     }
 }
 
+MaxFrequencyStack
+
+public class FreqStack {
+    private Map<Integer, Integer> countMap;
+    private Map<Integer, Stack<Integer>> stackMap;
+    private int maxCount;
+
+    public FreqStack() {
+        countMap = new HashMap<>();
+        stackMap = new HashMap<>();
+        maxCount = 0;
+    }
+
+    public void push(int val) {
+        int newCountOfVal = countMap.getOrDefault(val, 0) + 1;
+        countMap.put(val, newCountOfVal);
+        if (newCountOfVal > maxCount) {
+            maxCount = newCountOfVal;
+            stackMap.put(newCountOfVal, new Stack<Integer>());
+        }
+        stackMap.get(newCountOfVal).push(val);
+    }
+
+    public int pop() {
+        int valueForPop = stackMap.get(maxCount).pop();
+        countMap.put(valueForPop, countMap.get(valueForPop) - 1);
+        if (stackMap.get(maxCount).isEmpty()) {
+            maxCount--;
+        }
+        return valueForPop;
+    }
+}
+
  */
